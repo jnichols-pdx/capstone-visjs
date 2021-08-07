@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Network</title>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+    <style type="text/css">
+      #mynetwork {
+        width: 1000px;
+        height: 800px;
+        border: 1px solid lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mynetwork"></div>
+    <script type="text/javascript">
+      // create an array with nodes
+      var nodes = new vis.DataSet([
+        { id: 1, label: "Elsa Einstein" },
+        { id: 2, label: "Albert Einstein" },
+        { id: 3, label: "Max Lowenthal" },
+        { id: 4, label: "Mileva Einstein" },
+        { id: 5, label: "Max Planck" },
+      ]);
+
+      // create an array with edges
+      var edges = new vis.DataSet([
+        { from: 1, to: 3, label:  "Previously Married" },
+        { from: 1, to: 2, label: "Maternal first cousins" },
+        { from: 1, to: 2, label: "Married" },
+        { from: 2, to: 4, label: "Previously Married" },
+        { from: 2, to: 5, label: "Worked with" },
+        { from: 3, to: 3, label: "self" },
+      ]);
+
+      // create a network
+      var container = document.getElementById("mynetwork");
+      var data = {
+        nodes: nodes,
+        edges: edges,
+      };
+      var options = {};
+      var network = new vis.Network(container, data, options);
+    </script>
+  </body>
+</html>
