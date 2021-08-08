@@ -19,4 +19,4 @@ jobs:
     # Runs a single command using the runners shell
     - name: Trigger Jenkins
       run: curl -u capstone:1180ad69d34e827e11aad7e779f7d26faa "http://jenkins.smilr.net/jo
-b/capstone-vis/build?token=capGO
+b/capstone-vis/build?token=capGO"
